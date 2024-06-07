@@ -1,0 +1,113 @@
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        question: Is there any controversy regarding the fact that Pluto stopped to be a planet ?
+        subject: astronomy
+      outputs:
+        answer: |-
+          Yes, there is some controversy surrounding the reclassification of Pluto from a planet to a dwarf planet. In 2006, the International Astronomical Union (IAU) redefined the criteria for what qualifies as a planet, and under these new criteria, Pluto did not meet the requirements to be classified as a planet. 
+
+          This decision was met with mixed reactions from the scientific community and the general public. Some scientists and astronomers disagreed with the reclassification, arguing that the new definition was too narrow and that Pluto should still be considered a planet. Others supported the reclassification, stating that it was important to have a clear and consistent definition of what constitutes a planet.
+
+          The controversy surrounding the reclassification of Pluto continues to be a topic of discussion and debate among astronomers and the public. It's important to note that the scientific consensus, as represented by the IAU, currently classifies Pluto as a dwarf planet. 
+
+          For more information on the controversy surrounding Pluto's classification, you can refer to scientific articles and publications that discuss the topic in detail.
+    - inputs:
+        question: And why Ceres is now known as a Planet, instead of Pluto ?
+        subject: astronomy
+      outputs:
+        answer: |-
+          Ceres is not currently classified as a planet. It is classified as a dwarf planet, similar to Pluto. 
+
+          The reclassification of Pluto and the creation of the category of dwarf planets were based on the new criteria established by the International Astronomical Union (IAU) in 2006. According to these criteria, a celestial body must meet three requirements to be classified as a planet:
+
+          1. It must orbit the Sun.
+          2. It must be spherical in shape, meaning it has enough self-gravity to pull itself into a nearly round shape.
+          3. It must have cleared its orbit of other debris, meaning it has become gravitationally dominant in its orbital neighborhood.
+
+          While Pluto meets the first two criteria, it does not meet the third criterion because it shares its orbit with other objects in the Kuiper Belt. Therefore, it was reclassified as a dwarf planet.
+
+          Ceres, on the other hand, is located in the asteroid belt between Mars and Jupiter. It is spherical in shape and orbits the Sun, but it has not cleared its orbit of other debris. As a result, Ceres is classified as a dwarf planet.
+
+          It's important to note that scientific classifications are subject to change as our understanding of celestial bodies evolves. For more information on the classification of dwarf planets, you can refer to resources such as scientific articles and publications on the topic.
+    - inputs:
+        question: 'Now, please listen to the questions and answer in portuguese of Brazil. '
+        subject: astronomy
+      outputs:
+        answer: Claro! Fique à vontade para fazer suas perguntas em português do Brasil. Estou aqui para ajudar com informações sobre astronomia.
+    - inputs:
+        question: Qual a maior lua do sistema Joviano ?
+        subject: astronomy
+      outputs:
+        answer: A maior lua do sistema joviano é Ganimedes. Ganimedes é a maior lua de Júpiter e também a maior lua do Sistema Solar. Ela possui um diâmetro de aproximadamente 5.268 quilômetros, o que a torna maior do que o planeta Mercúrio. Ganimedes é composta principalmente de gelo e rocha, e possui uma superfície marcada por crateras, sulcos e algumas regiões mais suaves. Ela também possui um campo magnético próprio. Ganimedes é uma das quatro grandes luas de Júpiter, conhecidas como luas galileanas, em homenagem a Galileu Galilei, que as descobriu em 1610.
+    - inputs:
+        question: Fale sobre a história da astronomia
+        subject: astronomy
+      outputs:
+        answer: |-
+          A história da astronomia remonta a milhares de anos e está intrinsecamente ligada ao desenvolvimento da humanidade. Desde os tempos antigos, as pessoas têm olhado para o céu e se maravilhado com os corpos celestes acima de nós.
+
+          Uma das primeiras civilizações a registrar observações astronômicas foi a antiga civilização mesopotâmica, por volta de 3000 a.C. Eles mantinham registros detalhados de eventos celestes, como eclipses solares e lunares, e usavam essas observações para criar calendários e prever eventos astronômicos.
+
+          No Egito Antigo, os astrônomos usavam as estrelas para orientação e para estabelecer o calendário agrícola. Eles também desenvolveram uma compreensão rudimentar dos movimentos dos planetas.
+
+          Na Grécia Antiga, grandes filósofos como Aristóteles e Ptolomeu desenvolveram modelos geocêntricos do universo, nos quais a Terra era considerada o centro do sistema solar. Essas ideias prevaleceram por séculos.
+
+          No século XVI, com o advento do telescópio, a astronomia deu um grande salto. Astrônomos como Galileu Galilei, Johannes Kepler e Nicolaus Copérnico revolucionaram a compreensão do cosmos. Galileu fez importantes observações astronômicas, incluindo as luas de Júpiter e as fases de Vênus, que apoiaram a teoria heliocêntrica de Copérnico.
+
+          No século XVIII, Isaac Newton formulou as leis do movimento e da gravitação universal, fornecendo uma base sólida para a astronomia. Combinando observações astronômicas e matemática, os astrônomos foram capazes de calcular órbitas planetárias e prever eventos celestes com maior precisão.
+
+          No século XX, a astronomia avançou significativamente com o desenvolvimento de tecnologias como telescópios cada vez mais poderosos, satélites espaciais e observatórios espaciais. Essas ferramentas permitiram a observação de objetos distantes, como galáxias e quasares, e a descoberta de fenômenos cósmicos fascinantes, como a radiação cósmica de fundo e a expansão acelerada do universo.
+
+          Atualmente, a astronomia continua a avançar com pesquisas em áreas como a busca por exoplanetas habitáveis, a compreensão da matéria escura e da energia escura e a exploração do Sistema Solar através de missões espaciais. A astronomia é uma ciência em constante evolução, que nos ajuda a desvendar os mistérios do universo em que vivemos.
+    is_chat_input: false
+    is_chat_history: true
+  question:
+    type: string
+    default: Fale sobre a história da astronomia
+    is_chat_input: true
+  subject:
+    type: string
+    default: astronomy
+    is_chat_input: false
+outputs:
+  answer:
+    type: string
+    reference: ${chat.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: pre_model
+  type: python
+  source:
+    type: package
+    tool: content_safety_text.tools.content_safety_text_tool.analyze_text
+  inputs:
+    connection: "aicontentsafety001"
+    hate_category: "medium_sensitivity"
+    self_harm_category: "medium_sensitivity"
+    sexual_category: "medium_sensitivity"
+    text: "${inputs.question}"
+    violence_category: "medium_sensitivity"
+  aggregation: false
+- name: chat
+  type: llm
+  source:
+    type: code
+    path: chat__variant_1.jinja2
+  inputs:
+    deployment_name: "gpt-35-turbo-16k-120k-tokens-default"
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 800
+    chat_history: "${inputs.chat_history}"
+    question: "${inputs.question}"
+    subject: "${inputs.subject}"
+  api: chat
+  provider: AzureOpenAI
+  connection: Default_AzureOpenAI
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt

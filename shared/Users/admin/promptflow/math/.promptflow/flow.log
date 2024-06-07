@@ -1,0 +1,8 @@
+2023-12-11 12:59:32 -0300   53224 execution.flow     INFO     Start executing nodes in thread pool mode.
+2023-12-11 12:59:32 -0300   53224 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
+2023-12-11 12:59:32 -0300   53224 execution.flow     INFO     Executing node calculate. node run id: 342d454e-cddd-4b1b-8a8b-56d2bcaf6d34_calculate_0
+2023-12-11 12:59:33 -0300   53224 execution.flow     INFO     [calculate in line 0 (index starts from 0)] stdout> Function: MathPlugin.Subtract
+2023-12-11 12:59:33 -0300   53224 execution.flow     INFO     [calculate in line 0 (index starts from 0)] stdout> Input vars: {'input': '5', 'number2': '3'}
+2023-12-11 12:59:33 -0300   53224 execution.flow     INFO     [calculate in line 0 (index starts from 0)] stdout> Output vars: ['RESULT__FINAL_ANSWER']
+2023-12-11 12:59:33 -0300   53224 execution.flow     INFO     [calculate in line 0 (index starts from 0)] stdout> Result: 
+2023-12-11 12:59:33 -0300   53224 execution.flow     INFO     Node calculate completes.

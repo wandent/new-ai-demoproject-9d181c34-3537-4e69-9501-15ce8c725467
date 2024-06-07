@@ -1,0 +1,28 @@
+{
+  "nodes": {
+    "pre_model": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    },
+    "negative": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    },
+    "chat": {
+      "variant_1": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    },
+    "Final": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    }
+  }
+}

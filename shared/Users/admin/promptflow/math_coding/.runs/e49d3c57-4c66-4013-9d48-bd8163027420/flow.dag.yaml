@@ -1,0 +1,63 @@
+inputs:
+  math_question:
+    type: string
+    default: If a rectangle has a length of 10 and width of 5, what is the area?
+    is_chat_input: false
+  code_samples:
+    type: list
+    is_chat_input: false
+outputs:
+  code:
+    type: string
+    reference: ${code_refine.output}
+  answer:
+    type: string
+    reference: ${final_code_execution.output}
+nodes:
+- name: final_code_execution
+  type: python
+  source:
+    type: code
+    path: code_execution.py
+  inputs:
+    code_snippet: ${code_refine.output}
+  use_variants: false
+- name: math_example
+  type: python
+  source:
+    type: code
+    path: math_example.py
+  inputs: {}
+  use_variants: false
+- name: code_refine
+  type: python
+  source:
+    type: code
+    path: code_refine.py
+  inputs:
+    original_code: ${code_gen.output}
+  use_variants: false
+- name: code_gen
+  type: llm
+  source:
+    type: code
+    path: ask_llm.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo-16k-120k-tokens-default
+    temperature: 1
+    top_p: 1
+    response_format:
+      type: text
+    presence_penalty: 0
+    frequency_penalty: 0
+    examples: ${math_example.output}
+    question: ${inputs.math_question}
+  provider: AzureOpenAI
+  connection: Default_AzureOpenAI
+  api: chat
+  module: promptflow.tools.aoai
+  use_variants: false
+node_variants: {}
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt

@@ -1,0 +1,27 @@
+id: template_standard_flow
+name: Template Standard Flow
+inputs:
+  topic:
+    type: string
+    is_chat_input: false
+  deployment:
+    type: string
+    is_chat_input: false
+outputs:
+  response:
+    type: string
+    reference: ${complete.output}
+nodes:
+- name: complete
+  type: python
+  source:
+    type: code
+    path: echo.py
+  inputs:
+    conn: echo
+    deployment: ${inputs.deployment}
+    prompt: ${inputs.topic}
+  use_variants: false
+node_variants: {}
+environment:
+  python_requirements_txt: requirements.txt

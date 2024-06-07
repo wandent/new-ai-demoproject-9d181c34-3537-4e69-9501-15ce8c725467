@@ -1,0 +1,55 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 537,
+      "y": 67,
+      "index": -1
+    },
+    "outputs": {
+      "x": 362,
+      "y": 397,
+      "index": -1
+    },
+    "sk_chat": {
+      "x": 362,
+      "y": 287,
+      "height": 75,
+      "index": 0
+    },
+    "system": {
+      "x": 12,
+      "y": 177,
+      "height": 75,
+      "index": 1
+    },
+    "chat_history": {
+      "x": 362,
+      "y": 177,
+      "height": 75,
+      "index": 2
+    },
+    "determine_intent": {
+      "x": 712,
+      "y": 177,
+      "height": 75,
+      "index": 3
+    },
+    "document_context": {
+      "x": 12,
+      "y": 67,
+      "height": 75,
+      "index": 4
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      -98.078125,
+      -140.5
+    ]
+  }
+}

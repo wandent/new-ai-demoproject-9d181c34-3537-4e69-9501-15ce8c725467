@@ -1,0 +1,52 @@
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        question: Is there any controversy regarding the fact that Pluto stopped to be a planet ?
+        subject: astronomy
+      outputs:
+        answer: |-
+          Yes, there is some controversy surrounding the reclassification of Pluto from a planet to a dwarf planet. In 2006, the International Astronomical Union (IAU) redefined the criteria for what qualifies as a planet, and under these new criteria, Pluto did not meet the requirements to be classified as a planet. 
+
+          This decision was met with mixed reactions from the scientific community and the general public. Some scientists and astronomers disagreed with the reclassification, arguing that the new definition was too narrow and that Pluto should still be considered a planet. Others supported the reclassification, stating that it was important to have a clear and consistent definition of what constitutes a planet.
+
+          The controversy surrounding the reclassification of Pluto continues to be a topic of discussion and debate among astronomers and the public. It's important to note that the scientific consensus, as represented by the IAU, currently classifies Pluto as a dwarf planet. 
+
+          For more information on the controversy surrounding Pluto's classification, you can refer to scientific articles and publications that discuss the topic in detail.
+    is_chat_input: false
+    is_chat_history: true
+  question:
+    type: string
+    default: And why Ceres is now known as a Planet, instead of Pluto ?
+    is_chat_input: true
+  subject:
+    type: string
+    default: astronomy
+    is_chat_input: false
+outputs:
+  answer:
+    type: string
+    reference: ${chat.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: chat
+  type: llm
+  source:
+    type: code
+    path: chat__variant_1.jinja2
+  inputs:
+    deployment_name: "gpt-35-turbo-16k-120k-tokens-default"
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 800
+    chat_history: "${inputs.chat_history}"
+    question: "${inputs.question}"
+    subject: "${inputs.subject}"
+  api: chat
+  provider: AzureOpenAI
+  connection: Default_AzureOpenAI
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt

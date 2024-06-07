@@ -1,0 +1,61 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "outputs": {
+      "x": 134.48828125,
+      "y": 860.8048437500001,
+      "index": -1
+    },
+    "modify_query_with_history": {
+      "x": 125.91015625,
+      "y": 130.69921875,
+      "height": 75,
+      "index": 0
+    },
+    "embed_the_question": {
+      "x": 213.578125,
+      "y": 272.21875,
+      "height": 75,
+      "index": 1
+    },
+    "search_question_from_indexed_docs": {
+      "x": 224.76171875,
+      "y": 403.8203125,
+      "height": 75,
+      "index": 2
+    },
+    "generate_prompt_context": {
+      "x": 252.93359375,
+      "y": 516.5859375,
+      "height": 75,
+      "index": 3
+    },
+    "Prompt_variants": {
+      "x": -33.57942708333337,
+      "y": 606.1510416666666,
+      "height": 75,
+      "index": 4
+    },
+    "answer_the_question_with_context": {
+      "x": 72.1796875,
+      "y": 735.65234375,
+      "height": 75,
+      "index": 5
+    },
+    "inputs": {
+      "x": 37.76953125,
+      "y": 39.56640625,
+      "index": -1
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      0.6000000000000001,
+      0,
+      0,
+      0.6000000000000001,
+      162.1140625,
+      -10.891406250000045
+    ]
+  }
+}

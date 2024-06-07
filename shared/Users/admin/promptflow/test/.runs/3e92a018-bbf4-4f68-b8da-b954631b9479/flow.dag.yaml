@@ -1,0 +1,19 @@
+id: template_standard_flow
+name: Template Standard Flow
+inputs: {}
+outputs:
+  echo_response:
+    type: string
+    reference: ${echo.output}
+nodes:
+- name: echo
+  type: python
+  source:
+    type: code
+    path: echo.py
+  inputs:
+    conn: echo
+  use_variants: false
+node_variants: {}
+environment:
+  python_requirements_txt: requirements.txt

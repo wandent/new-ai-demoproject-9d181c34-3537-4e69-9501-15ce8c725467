@@ -1,0 +1,10 @@
+{
+  "nodes": {
+    "calculate": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    }
+  }
+}

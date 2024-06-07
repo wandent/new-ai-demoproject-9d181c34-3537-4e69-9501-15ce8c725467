@@ -1,0 +1,48 @@
+{
+  "package": {},
+  "code": {
+    "echo.py": {
+      "name": "echo.py",
+      "type": "python",
+      "inputs": {
+        "conn": {
+          "type": [
+            "CustomConnection"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "echo",
+          "id": "wu80jbcb",
+          "realType": "CustomConnection"
+        },
+        "deployment": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.deployment}",
+          "id": "zky7asl9"
+        },
+        "prompt": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.topic}",
+          "id": "0b56vejf"
+        }
+      },
+      "source": "echo.py",
+      "function": "run_prompt",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "echo.py"
+    }
+  }
+}

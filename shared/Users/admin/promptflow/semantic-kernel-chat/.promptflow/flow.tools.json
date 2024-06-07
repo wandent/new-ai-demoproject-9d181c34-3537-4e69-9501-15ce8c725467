@@ -1,0 +1,173 @@
+{
+  "package": {},
+  "code": {
+    "sk_chat.py": {
+      "name": "sk_chat.py",
+      "type": "python",
+      "inputs": {
+        "conn": {
+          "type": [
+            "AzureOpenAIConnection"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "Default_AzureOpenAI",
+          "id": "aomg6365",
+          "realType": "AzureOpenAIConnection"
+        },
+        "deployment_name": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "gpt-35-turbo-16k-120k-tokens-default",
+          "id": "mkgriqzs"
+        },
+        "history": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${chat_history.output}"
+        },
+        "prompt": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "7pwzkchp"
+        },
+        "system": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${system.output}",
+          "id": "g6hv494k"
+        }
+      },
+      "source": "sk_chat.py",
+      "function": "sk_chat",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "sk_chat.py"
+    },
+    "system.jinja2": {
+      "name": "system.jinja2",
+      "type": "prompt",
+      "inputs": {
+        "text": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${document_context.output}"
+        }
+      },
+      "source": "system.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "system.jinja2"
+    },
+    "chat_history.jinja2": {
+      "name": "chat_history.jinja2",
+      "type": "prompt",
+      "inputs": {
+        "chat_history": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        }
+      },
+      "source": "chat_history.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "chat_history.jinja2"
+    },
+    "determine_intent.jinja2": {
+      "name": "determine_intent.jinja2",
+      "type": "prompt",
+      "inputs": {
+        "chat_history": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.chat_history}",
+          "id": "9aso9ycx"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        }
+      },
+      "source": "determine_intent.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "determine_intent.jinja2"
+    },
+    "determine_intent__variant_1.jinja2": {
+      "name": "determine_intent__variant_1.jinja2",
+      "type": "prompt",
+      "inputs": {
+        "chat_history": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.chat_history}",
+          "id": "9aso9ycx"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        }
+      },
+      "source": "determine_intent__variant_1.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "determine_intent__variant_1.jinja2"
+    },
+    "document_context.jinja2": {
+      "name": "document_context.jinja2",
+      "type": "prompt",
+      "source": "document_context.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "document_context.jinja2"
+    }
+  }
+}

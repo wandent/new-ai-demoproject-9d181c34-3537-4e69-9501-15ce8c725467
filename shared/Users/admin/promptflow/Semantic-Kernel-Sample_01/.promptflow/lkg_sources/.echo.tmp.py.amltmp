@@ -1,0 +1,36 @@
+from promptflow import tool
+from promptflow.connections import CustomConnection
+
+
+# The inputs section will change based on the arguments of the tool function, after you save the code
+# Adding type to arguments and return value will help the system show the types properly
+# Please update the function name/signature per need
+
+# In Python tool you can do things like calling external services or
+# pre/post processing of data, pretty much anything you want
+
+@tool
+def run_prompt(prompt: str, deployment: str, conn: CustomConnection) -> str: 
+    import os
+    import openai
+
+    llm_service=conn.GLOBAL_LLM_SERVIE
+    key = conn.AZURE_OPENAI_KEY
+    endpoint=conn.AZURE_OPENAI_ENDPOINT
+    
+    # Activate the conda environment
+    os.system("conda activate /azureml-envs/prompt-flow/runtime")
+    from semantic_kernel import Kernel
+    #from semantic_kernel.connectors.ai.azure_openai import AzureOpenAIChatCompletion
+    from semantic_kernel.connectors.ai.open_ai import AzureTextCompletion
+    kernel = Kernel()
+    # Prepare Azure OpenAI service using credentials stored in the `.env` file
+    
+    kernel.add_text_completion_service(
+            "dv", AzureTextCompletion( deployment_name= deployment, endpoint= endpoint, api_key= key)
+        )
+    kernel["dv"] = "Hello, i'd like you to explain the following topic: " + prompt 
+    result = kernel["dv"]
+    return result
+
+

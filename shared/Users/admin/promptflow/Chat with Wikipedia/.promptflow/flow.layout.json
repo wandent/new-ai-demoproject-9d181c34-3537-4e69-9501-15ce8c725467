@@ -1,0 +1,55 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 12,
+      "y": 62,
+      "index": -1
+    },
+    "outputs": {
+      "x": 12,
+      "y": 722,
+      "index": -1
+    },
+    "extract_query_from_question": {
+      "x": 125.265625,
+      "y": 162.6640625,
+      "height": 75,
+      "index": 0
+    },
+    "get_wiki_url": {
+      "x": 136.16015625,
+      "y": 287.35546875,
+      "height": 75,
+      "index": 1
+    },
+    "search_result_from_url": {
+      "x": 142.234375,
+      "y": 391.12109375,
+      "height": 75,
+      "index": 2
+    },
+    "process_search_result": {
+      "x": 143.26953125,
+      "y": 485.61328125,
+      "height": 75,
+      "index": 3
+    },
+    "augmented_chat": {
+      "x": -63.71484375,
+      "y": 578.625,
+      "height": 75,
+      "index": 4
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      83.01953125,
+      -124.62109375
+    ]
+  }
+}

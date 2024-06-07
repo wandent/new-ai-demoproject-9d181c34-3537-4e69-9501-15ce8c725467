@@ -1,0 +1,41 @@
+inputs:
+  chat_history:
+    type: list
+    default: []
+    is_chat_input: false
+    is_chat_history: true
+  question:
+    type: string
+    default: Can you provide me a bulleted list of facts about the planet Mars?
+    is_chat_input: false
+  subject:
+    type: string
+    default: When pluto stopped to be a planet ?
+    is_chat_input: true
+outputs:
+  answer:
+    type: string
+    reference: ${chat.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: chat
+  type: llm
+  source:
+    type: code
+    path: chat.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo-16k-120k-tokens-default
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 800
+    chat_history: ${inputs.chat_history}
+    question: ${inputs.question}
+  provider: AzureOpenAI
+  connection: Default_AzureOpenAI
+  api: chat
+  aggregation: false
+  use_variants: false
+node_variants: {}
+environment:
+  python_requirements_txt: requirements.txt

@@ -1,0 +1,58 @@
+{
+  "package": {},
+  "code": {
+    "run_function.py": {
+      "name": "run_function.py",
+      "type": "python",
+      "inputs": {
+        "response_message": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${use_functions_with_chat_models.output}",
+          "id": "cf4g2jmu"
+        }
+      },
+      "source": "run_function.py",
+      "function": "run_function",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "run_function.py"
+    },
+    "use_functions_with_chat_models.jinja2": {
+      "name": "use_functions_with_chat_models.jinja2",
+      "type": "prompt",
+      "inputs": {
+        "chat_history": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.chat_history}",
+          "id": "meqybj16"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "rmnpkhv4"
+        }
+      },
+      "source": "use_functions_with_chat_models.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "use_functions_with_chat_models.jinja2"
+    }
+  }
+}

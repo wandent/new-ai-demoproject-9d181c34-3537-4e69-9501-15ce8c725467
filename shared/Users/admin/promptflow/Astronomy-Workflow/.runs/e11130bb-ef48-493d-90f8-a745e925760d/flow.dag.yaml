@@ -1,0 +1,40 @@
+inputs:
+  chat_history:
+    type: list
+    default: []
+    is_chat_input: false
+    is_chat_history: true
+  question:
+    type: string
+    default: Is there any controversy regarding the fact that Pluto stopped to be a planet ?
+    is_chat_input: true
+  subject:
+    type: string
+    default: astronomy
+    is_chat_input: false
+outputs:
+  answer:
+    type: string
+    reference: ${chat.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: chat
+  type: llm
+  source:
+    type: code
+    path: chat__variant_1.jinja2
+  inputs:
+    deployment_name: "gpt-35-turbo-16k-120k-tokens-default"
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 800
+    chat_history: "${inputs.chat_history}"
+    question: "${inputs.question}"
+    subject: "${inputs.subject}"
+  api: chat
+  provider: AzureOpenAI
+  connection: Default_AzureOpenAI
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt

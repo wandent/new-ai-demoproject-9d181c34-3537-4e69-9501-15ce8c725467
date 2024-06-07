@@ -1,0 +1,34 @@
+{
+  "nodes": {
+    "modify_query_with_history": {
+      "variant_0": {
+        "inputs": {}
+      }
+    },
+    "embed_the_question": {
+      "variant_0": {
+        "inputs": {}
+      }
+    },
+    "search_question_from_indexed_docs": {
+      "variant_0": {
+        "inputs": {}
+      }
+    },
+    "generate_prompt_context": {
+      "variant_0": {
+        "inputs": {}
+      }
+    },
+    "Prompt_variants": {
+      "Variant_0": {
+        "inputs": {}
+      }
+    },
+    "answer_the_question_with_context": {
+      "variant_0": {
+        "inputs": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+inputs:
+  text:
+    type: string
+    default: What is 5-3
+    is_chat_input: false
+outputs:
+  result:
+    type: string
+    reference: ${calculate.output}
+nodes:
+- name: calculate
+  type: python
+  source:
+    type: code
+    path: calculate.py
+  inputs:
+    AzureOpenAIConnection: default
+    input: ${inputs.text}
+    deployment_type: text-completion
+    deployment_name: gpt-35-turbo-instruct
+  use_variants: false
+node_variants: {}

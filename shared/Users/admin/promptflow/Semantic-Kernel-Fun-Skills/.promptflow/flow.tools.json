@@ -1,0 +1,38 @@
+{
+  "package": {},
+  "code": {
+    "jokes_SK.py": {
+      "name": "jokes_SK.py",
+      "type": "python",
+      "inputs": {
+        "conn": {
+          "type": [
+            "CustomConnection"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "echo",
+          "id": "v5i1ays7",
+          "realType": "CustomConnection"
+        },
+        "topic": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.topic}",
+          "id": "i5du80mh"
+        }
+      },
+      "source": "jokes_SK.py",
+      "function": "jokes_sk",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "jokes_SK.py"
+    }
+  }
+}

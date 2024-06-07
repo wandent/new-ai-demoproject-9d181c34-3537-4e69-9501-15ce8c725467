@@ -1,0 +1,112 @@
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        question: When pluto stopped to be a planet ?
+        subject: When pluto stopped to be a planet ?
+      outputs:
+        answer: |-
+          Certainly! Here are some key facts about the planet Mars:
+
+          - Mars is the fourth planet from the Sun and is often referred to as the "Red Planet" due to its reddish appearance.
+          - It is the second smallest planet in our solar system, with a diameter of about 6,780 kilometers (4,212 miles), roughly half the size of Earth.
+          - Mars has a thin atmosphere composed mainly of carbon dioxide (95.32%), nitrogen (2.7%), and argon (1.6%), with traces of other gases.
+          - The average surface temperature on Mars is around -63 degrees Celsius (-81 degrees Fahrenheit), making it a very cold planet.
+          - Mars has a day length similar to Earth, with a slightly longer day of about 24 hours and 37 minutes.
+          - The Martian year is almost twice as long as Earth's, as it takes Mars approximately 687 Earth days to complete one orbit around the Sun.
+          - Mars has two small moons named Phobos and Deimos, which are irregularly shaped and thought to be captured asteroids.
+          - The planet's surface is covered with iron-rich dust, giving it a distinct reddish color. This iron oxide dust is what gives Mars its nickname.
+          - Mars has the largest volcano in the solar system, Olympus Mons, which stands about 22 kilometers (13.6 miles) high and has a diameter of about 600 kilometers (370 miles).
+          - It is also home to Valles Marineris, the largest canyon system in the solar system, stretching for about 4,000 kilometers (2,500 miles) long and up to 7 kilometers (4 miles) deep.
+
+          These are just a few of the fascinating facts about Mars. If you would like more detailed information, feel free to ask!
+    - inputs:
+        question: 'Create a list of facts about Pluto '
+        subject: astronomy
+      outputs:
+        answer: |-
+          Certainly! Here are some key facts about Pluto:
+
+          - Pluto was classified as the ninth planet in our solar system until 2006 when it was reclassified as a "dwarf planet" by the International Astronomical Union (IAU).
+          - It is located in the Kuiper Belt, a region of the outer solar system beyond Neptune that is populated with icy bodies.
+          - Pluto is smaller than Earth's moon, with a diameter of about 2,377 kilometers (1,477 miles).
+          - It has a highly elliptical orbit, which means its distance from the Sun varies significantly over time. At its closest approach, Pluto is about 4.67 billion kilometers (2.9 billion miles) from the Sun, and at its farthest, it can be about 7.5 billion kilometers (4.67 billion miles) away.
+          - Pluto has a thin atmosphere composed mainly of nitrogen, with traces of methane and carbon monoxide.
+          - The surface of Pluto is covered in a layer of frozen nitrogen, methane, and carbon monoxide. It also has mountains, valleys, and plains.
+          - Pluto has five known moons: Charon, Nix, Hydra, Kerberos, and Styx. Charon is the largest and is about half the size of Pluto.
+          - The discovery of Pluto in 1930 was credited to Clyde Tombaugh, an American astronomer. It was named after the Roman god of the underworld.
+          - In 2015, NASA's New Horizons spacecraft made a historic flyby of Pluto, providing detailed images and data about the dwarf planet and its moons.
+          - Despite its reclassification, Pluto continues to be a subject of scientific interest and research, as it offers insights into the outer reaches of our solar system.
+
+          These are some fascinating facts about Pluto. If you have any more questions or would like additional information, feel free to ask!
+    - inputs:
+        question: 'Create a table containing in one column the name of the planet in our solar system, and in the other column a bulleted list with facts about this planet. '
+        subject: astronomy
+      outputs:
+        answer: |-
+          The history of astronomy can be traced back to ancient civilizations such as the Babylonians, Egyptians, and Greeks who observed and recorded celestial events. They developed early models and theories to explain the motions of the stars, planets, and other celestial objects.
+
+          One of the most well-known astronomers from ancient times is Claudius Ptolemy, who proposed the geocentric model of the universe in the 2nd century CE. According to this model, Earth was believed to be the center of the universe, with the Sun, Moon, planets, and stars orbiting around it.
+
+          In the 16th century, Nicolaus Copernicus challenged the geocentric model with his heliocentric model, which proposed that the Sun was at the center of the solar system and that the planets, including Earth, revolved around it. This marked a significant shift in our understanding of the universe.
+
+          During the 17th and 18th centuries, astronomers such as Johannes Kepler and Isaac Newton made groundbreaking discoveries and developed laws of motion and gravitation that helped explain the movements of celestial bodies. These discoveries laid the foundation for modern astronomy.
+
+          In the 20th century, advancements in technology, such as the development of telescopes and space missions, allowed astronomers to observe and study objects in the universe in greater detail. This led to significant discoveries, such as the expansion of the universe and the existence of black holes.
+
+          Today, astronomy is a thriving field of study that continues to expand our understanding of the universe. Astronomers use various methods and instruments, including telescopes, satellites, and computer simulations, to observe and analyze celestial objects and phenomena.
+
+          For more detailed information about the history of astronomy, you can refer to books such as "The History of Astronomy: A Very Short Introduction" by Michael Hoskin or "The History of Astronomy: A Brief Introduction" by Michael J. Crowe. Online resources such as the NASA website and the European Space Agency's website also provide information on the history of astronomy.
+    - inputs:
+        question: No, I want a Table with in one column the name of the planet, and on the other column a list of facts about this planet
+        subject: astronomy
+      outputs:
+        answer: |-
+          Sure! The history of astronomy dates back thousands of years. Ancient civilizations, such as the Egyptians, Greeks, and Mayans, made significant contributions to the field. They observed celestial objects and developed theories to explain their movements.
+
+          One of the most famous astronomers in history is Nicolaus Copernicus, who proposed the heliocentric model of the solar system in the 16th century. This model suggested that the Earth and other planets revolve around the Sun, challenging the prevailing geocentric model.
+
+          Another important figure in the history of astronomy is Galileo Galilei. In the 17th century, he made groundbreaking observations using telescopes and supported the heliocentric model. However, his ideas were controversial and faced opposition from the Catholic Church.
+
+          The development of telescopes greatly advanced astronomy. In the 17th and 18th centuries, astronomers like Johannes Kepler and Isaac Newton formulated laws and theories that explained the motion of celestial bodies and the force of gravity.
+
+          In the 20th century, the field of astronomy expanded with the development of new technologies, such as radio telescopes and space probes. This led to significant discoveries, including the Big Bang theory, the existence of black holes, and the discovery of exoplanets.
+
+          For a more comprehensive understanding of the history of astronomy, I recommend referring to reliable sources and books that specialize in the topic.
+    is_chat_input: false
+    is_chat_history: true
+  question:
+    type: string
+    default: ${inputs.subject}
+    is_chat_input: true
+  subject:
+    type: string
+    default: astronomy
+    is_chat_input: false
+outputs:
+  answer:
+    type: string
+    reference: ${chat.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: chat
+  type: llm
+  source:
+    type: code
+    path: chat__variant_2.jinja2
+  inputs:
+    deployment_name: "gpt-35-turbo-16k-120k-tokens-default"
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 800
+    chat_history: "${inputs.chat_history}"
+    question: "${inputs.question}"
+    subject: "${inputs.subject}"
+  api: chat
+  provider: AzureOpenAI
+  connection: Default_AzureOpenAI
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt

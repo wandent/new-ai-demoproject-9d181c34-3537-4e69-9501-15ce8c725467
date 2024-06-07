@@ -1,0 +1,106 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "342d454e-cddd-4b1b-8a8b-56d2bcaf6d34_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "text": "What is 5-3"
+      },
+      "output": {
+        "result": ""
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "342d454e-cddd-4b1b-8a8b-56d2bcaf6d34",
+      "root_run_id": "342d454e-cddd-4b1b-8a8b-56d2bcaf6d34",
+      "source_run_id": null,
+      "flow_id": "default_flow_id",
+      "start_time": "2023-12-11T15:59:32.702450Z",
+      "end_time": "2023-12-11T15:59:33.987391Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "calculate",
+          "type": "Tool",
+          "inputs": {
+            "AzureOpenAIConnection": "default",
+            "deployment_name": "gpt-35-turbo-instruct",
+            "deployment_type": "text-completion",
+            "input": "What is 5-3"
+          },
+          "output": "",
+          "start_time": 1702321172.703167,
+          "end_time": 1702321173.986893,
+          "error": null,
+          "children": null,
+          "node_name": "calculate"
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 1.284941,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "result": {
+        "result": ""
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "calculate",
+      "flow_run_id": "342d454e-cddd-4b1b-8a8b-56d2bcaf6d34",
+      "run_id": "342d454e-cddd-4b1b-8a8b-56d2bcaf6d34_calculate_0",
+      "status": "Completed",
+      "inputs": {
+        "AzureOpenAIConnection": "default",
+        "deployment_name": "gpt-35-turbo-instruct",
+        "deployment_type": "text-completion",
+        "input": "What is 5-3"
+      },
+      "output": "",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "342d454e-cddd-4b1b-8a8b-56d2bcaf6d34_0",
+      "start_time": "2023-12-11T15:59:32.703047Z",
+      "end_time": "2023-12-11T15:59:33.987031Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "calculate",
+          "type": "Tool",
+          "inputs": {
+            "AzureOpenAIConnection": "default",
+            "deployment_name": "gpt-35-turbo-instruct",
+            "deployment_type": "text-completion",
+            "input": "What is 5-3"
+          },
+          "output": "",
+          "start_time": 1702321172.703167,
+          "end_time": 1702321173.986893,
+          "error": null,
+          "children": null,
+          "node_name": "calculate"
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "[2023-12-11T15:59:33+0000] Function: MathPlugin.Subtract\n[2023-12-11T15:59:33+0000] Input vars: {'input': '5', 'number2': '3'}\n[2023-12-11T15:59:33+0000] Output vars: ['RESULT__FINAL_ANSWER']\n[2023-12-11T15:59:33+0000] Result: \n",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 1.283984
+      },
+      "result": ""
+    }
+  ]
+}

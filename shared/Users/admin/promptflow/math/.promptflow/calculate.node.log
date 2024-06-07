@@ -1,0 +1,9 @@
+2023-12-11 12:53:27 -0300   52861 execution.flow     INFO     Executing node calculate. node run id: 1b674d35-d87a-4f2f-9f1e-d9e5b4d135db_calculate_48bfb13e-84ed-4b61-896a-270efefa2f21
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     [calculate in line None (index starts from 0)] stdout> Function: MathPlugin.Add
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     [calculate in line None (index starts from 0)] stdout> Input vars: {'input': '5', 'number2': '3'}
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     [calculate in line None (index starts from 0)] stdout> Output vars: ['SUM']
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     [calculate in line None (index starts from 0)] stdout> Function: MathPlugin.Add
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     [calculate in line None (index starts from 0)] stdout> Input vars: {'input': '$SUM', 'number2': ''}
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     [calculate in line None (index starts from 0)] stdout> Output vars: ['RESULT__FINAL_ANSWER']
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     [calculate in line None (index starts from 0)] stdout> Result: 
+2023-12-11 12:53:28 -0300   52861 execution.flow     INFO     Node calculate completes.

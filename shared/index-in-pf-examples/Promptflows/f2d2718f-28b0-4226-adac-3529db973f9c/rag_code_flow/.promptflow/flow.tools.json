@@ -1,0 +1,220 @@
+{
+  "code": {
+    "modify_query_with_history.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "modify_query_with_history.jinja2"
+    },
+    "Prompt_variants__Variant_0.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "contexts": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "Prompt_variants__Variant_0.jinja2"
+    },
+    "Prompt_variants__Variant_1.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "contexts": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "Prompt_variants__Variant_1.jinja2"
+    },
+    "Prompt_variants__Variant_2.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "contexts": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "Prompt_variants__Variant_2.jinja2"
+    },
+    "answer_the_question_with_context.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "prompt_text": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "answer_the_question_with_context.jinja2"
+    },
+    "generate_prompt_context.py": {
+      "name": "generate_prompt_context",
+      "type": "python",
+      "inputs": {
+        "search_result": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${search_question_from_indexed_docs.output}",
+          "id": "yy08nls7"
+        }
+      },
+      "description": "Generate the context for the prompt.",
+      "source": "generate_prompt_context.py",
+      "function": "generate_prompt_context",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable"
+    }
+  },
+  "package": {
+    "promptflow.tools.embedding.embedding": {
+      "name": "Embedding",
+      "description": "Use Open AI's embedding model to create an embedding vector representing the input text.",
+      "type": "python",
+      "module": "promptflow.tools.embedding",
+      "function": "embedding",
+      "inputs": {
+        "connection": {
+          "type": [
+            "AzureOpenAIConnection",
+            "OpenAIConnection"
+          ]
+        },
+        "deployment_name": {
+          "type": [
+            "string"
+          ],
+          "enabled_by": "connection",
+          "enabled_by_type": [
+            "AzureOpenAIConnection"
+          ],
+          "capabilities": {
+            "completion": false,
+            "chat_completion": false,
+            "embeddings": true
+          },
+          "model_list": [
+            "text-embedding-ada-002",
+            "text-search-ada-doc-001",
+            "text-search-ada-query-001"
+          ]
+        },
+        "model": {
+          "type": [
+            "string"
+          ],
+          "enabled_by": "connection",
+          "enabled_by_type": [
+            "OpenAIConnection"
+          ],
+          "enum": [
+            "text-embedding-ada-002",
+            "text-search-ada-doc-001",
+            "text-search-ada-query-001"
+          ],
+          "allow_manual_entry": true
+        },
+        "input": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "package": "promptflow-tools",
+      "package_version": "1.2.0"
+    },
+    "promptflow_vectordb.tool.vector_index_lookup.VectorIndexLookup.search": {
+      "name": "Vector Index Lookup",
+      "type": "python",
+      "inputs": {
+        "path": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "azureml://subscriptions/90a714cc-9046-4198-95fd-cddaf8e146d6/resourcegroups/rg-aidemoproject/providers/Microsoft.MachineLearningServices/workspaces/new-ai-demoproject/data/blue-plane-5n5chd4w1v/versions/2",
+          "id": "7fw08nd7"
+        },
+        "query": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${embed_the_question.output}",
+          "id": "p6wy95ap"
+        },
+        "top_k": {
+          "type": [
+            "int"
+          ],
+          "default": "3",
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "2",
+          "id": "65xaojw2"
+        }
+      },
+      "description": "Search text or vector based query from AzureML Vector Index.",
+      "module": "promptflow_vectordb.tool.vector_index_lookup",
+      "class_name": "VectorIndexLookup",
+      "function": "search",
+      "is_builtin": true,
+      "package": "promptflow-vectordb",
+      "package_version": "0.0.1",
+      "enable_kwargs": false,
+      "tool_state": "stable"
+    }
+  }
+}

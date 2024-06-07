@@ -1,0 +1,55 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 377.5,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 307.5,
+      "y": 980,
+      "index": -1
+    },
+    "modify_query_with_history": {
+      "x": 140,
+      "y": 176,
+      "index": 0
+    },
+    "search_question_from_indexed_docs": {
+      "x": 140,
+      "y": 444,
+      "index": 2
+    },
+    "Prompt_variants": {
+      "x": 227.5,
+      "y": 712,
+      "index": 4
+    },
+    "answer_the_question_with_context": {
+      "x": 227.5,
+      "y": 846,
+      "index": 5
+    },
+    "embed_the_question": {
+      "x": 140,
+      "y": 310,
+      "index": 1
+    },
+    "generate_prompt_context": {
+      "x": 140,
+      "y": 578,
+      "index": 3
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      -32,
+      -289
+    ]
+  }
+}

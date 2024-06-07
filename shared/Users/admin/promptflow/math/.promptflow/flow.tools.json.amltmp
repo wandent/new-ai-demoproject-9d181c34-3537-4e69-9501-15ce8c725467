@@ -1,0 +1,57 @@
+{
+  "package": {},
+  "code": {
+    "calculate.py": {
+      "name": "calculate.py",
+      "type": "python",
+      "inputs": {
+        "AzureOpenAIConnection": {
+          "type": [
+            "AzureOpenAIConnection"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "Default",
+          "id": "obel8qxw"
+        },
+        "deployment_name": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "gpt-35-turbo-instruct",
+          "id": "nub19q9k"
+        },
+        "deployment_type": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "text-completion",
+          "id": "om2pplxr"
+        },
+        "input": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.text}",
+          "id": "tnhc5rk1"
+        }
+      },
+      "source": "calculate.py",
+      "function": "calculate",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "calculate.py"
+    }
+  }
+}
